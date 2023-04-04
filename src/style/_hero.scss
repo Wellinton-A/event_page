@@ -1,0 +1,148 @@
+@use 'variables';
+
+.hero {
+    background-image: url(../image/hero_image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 80vh;
+    font-family: variables.$cardFont;
+    display: flex;
+    align-items: center;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__countdown {
+        color: variables.$mainColorFont;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        span {
+            font-size: 32px;
+            margin-left: 40px;
+
+        }
+
+        &__title {
+            font-size: 40px;
+        }
+
+        &__description {
+            font-size: 20px;
+        }
+    }
+
+    &__info {
+        max-width: 500px;
+        color: #787878;
+        animation: float 3s ease infinite;
+        margin-bottom: 20px;
+
+        &__ballons {
+            max-width: 600px;
+            display: flex;
+
+            img {
+                width: 50%;
+            }
+        }
+
+        &__text {
+            background-color: rgba($color: #777777, $alpha: 0.1);
+            padding: 40px;
+            border-radius: 10px;
+
+            li {
+                list-style: none;
+                margin-bottom: 40px;
+            }
+
+            a {
+                padding: 12px;
+                background-color: #787878;
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__img {
+        display: none;
+    }
+
+    @media screen and (max-width: 767px) {
+        background-image: initial;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: variables.$backgroundColor;
+
+        &__countdown {
+            margin-top: 16px;
+            position: absolute;
+            top: 0;
+            max-width: 80%;
+
+
+            span {
+                font-size: 20px;
+                margin-left: 24px;
+                display: inline;
+                flex-wrap: wrap;
+
+            }
+
+            &__title {
+                font-size: 16px;
+            }
+
+            &__description {
+                font-size: 12px;
+            }
+        }
+
+        img {
+            display: initial;
+            max-width: 100%;
+            padding: 0;
+            position: relative;
+        }
+
+        &__info {
+
+            &__text {
+
+                li {
+                    margin-bottom: 12px;
+                    font-size: 12px;
+                }
+
+                a {
+                    margin-top: 16px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-30px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
